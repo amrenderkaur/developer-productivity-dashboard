@@ -89,8 +89,11 @@ For example:
 * An unmatched search → "No projects found"
 
 ## Screenshots
+## 📸 Screenshots
 
-![Developer Productivity Dashboard](https://github.com/amrenderkaur/developer-productivity-dashboard/raw/main/screenshots/dashboard.png)
+Screenshot of the completed Developer Productivity Dashboard:
+
+<img src="https://github.com/amrenderkaur/developer-productivity-dashboard/raw/main/screenshots/dashboard.png" alt="Developer Productivity Dashboard" width="800">
 
 ##  Demo Video
 
