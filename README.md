@@ -90,7 +90,7 @@ For example:
 
 ## Screenshots
 
-![Developer Productivity Dashboard](screenshots/dashboard.png)
+![Developer Productivity Dashboard](https://github.com/amrenderkaur/developer-productivity-dashboard/raw/main/screenshots/dashboard.png)
 
 ##  Demo Video
 
