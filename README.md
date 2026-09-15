@@ -90,7 +90,7 @@ For example:
 
 ## Screenshots
 
-Screenshots of the completed dashboard will be added here.
+![Developer Productivity Dashboard](./screenshots/dashboard.png)
 
 ##  Demo Video
 
@@ -105,3 +105,5 @@ Demo video link will be added after recording the project demonstration.
 ##  Author
 
 Developed as part of the Full Stack Development Internship.
+
+
