@@ -1,103 +1,41 @@
-import { useState } from "react";
-import ProjectCard from "./components/ProjectCard";
+import { Link, Routes, Route } from "react-router-dom";
+import Dashboard from "./pages/Dashboard.jsx";
+import Projects from "./pages/Projects.jsx";
+import Tasks from "./pages/Tasks.jsx";
+import Analytics from "./pages/Analytics.jsx";
+import Settings from "./pages/Settings.jsx";
+import "./App.css";
+
 function App() {
-  const [searchTerm, setSearchTerm] = useState("");
-
-  const [loading, setLoading] = useState(false);
-
-  const [error, setError] = useState(false);
-  const projects = [
-  {
-    name: "Portfolio Website",
-    category: "Frontend Development",
-    progress: 80
-  },
-  {
-    name: "Task Manager",
-    category: "React Project",
-    progress: 60
-  },
-  {
-    name: "AI Dashboard",
-    category: "Machine Learning",
-    progress: 40
-  }
-];
-
-const filteredProjects = projects.filter((project) =>
-  project.name.toLowerCase().includes(searchTerm.toLowerCase())
-);
-
-
   return (
     <div>
-    <div>
-      <nav>
+      <nav className="navbar">
         <h2>DevDashboard</h2>
 
         <div className="nav-links">
-          <span>Dashboard</span>
-          <span>Projects</span>
-          <span>Tasks</span>
+          <Link to="/">Dashboard</Link>
+          <Link to="/projects">Projects</Link>
+          <Link to="/tasks">Tasks</Link>
+          <Link to="/analytics">Analytics</Link>
+          <Link to="/settings">Settings</Link>
         </div>
 
         <div className="user-profile">
-  <span>👤</span>
-  <span>Developer</span>
-</div>
+          <span>👤</span>
+          <span>Developer</span>
+        </div>
       </nav>
 
-      <main>
-
-        {loading && <p>Loading projects...</p>}
-
-        {error && <p>Something went wrong. Please try again.</p>}
-
-        <h1>Developer Productivity Dashboard</h1>
-        <p>Welcome back! Here is your productivity overview.</p>
-
-        <div>
-          <div className="stat-card">
-            <h3>Total Projects</h3>
-            <p>6</p>
-          </div>
-
-          <div className="stat-card">
-            <h3>Active Tasks</h3>
-            <p>12</p>
-          </div>
-
-          <div className="stat-card">
-            <h3>Completed</h3>
-            <p>24</p>
-          </div>
-        </div>
-
-        <div className="search-box">
-  <input
-  type="text"
-  placeholder="🔎 Search projects..."
-  value={searchTerm}
-  onChange={(e) => setSearchTerm(e.target.value)}
-/>
-</div>
-
-       <h2>My Projects</h2>
-
-       <div className="projects">
-
-        {filteredProjects.length === 0 && (
-  <p>No projects found </p>
-)}
-
-        {filteredProjects.map((project) => (
-  <ProjectCard key={project.name} project={project} />
-  ))}
-
-</div>
-</main>
+      <main className="dashboard">
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/tasks" element={<Tasks />} />
+          <Route path="/analytics" element={<Analytics />} />
+          <Route path="/settings" element={<Settings />} />
+        </Routes>
+      </main>
     </div>
-  </div>
   );
 }
 
